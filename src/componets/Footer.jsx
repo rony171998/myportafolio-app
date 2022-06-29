@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <footer >
+        <footer className="bg-dark">
             <div className="card mb-3 mt-3">
                 <div className="row">
                     <div className="col">
@@ -53,20 +53,30 @@ const Footer = () => {
                     <div className="col">
                         <div className="card-body">
                             <h4 className="card-header">Social</h4>
-
-                            <a href="https://www.linkedin.com/in/rony-puche-a80275234/" target="_blank" rel="noopener noreferrer">
-                                <img className="card-img mt-1 ml-1" style={{ width: "25%" }} src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="" />
+                            <div className="col">
+                                <a href="https://www.linkedin.com/in/rony-puche-a80275234/" target="_blank" rel="noopener noreferrer">
+                                <img className="card-img mt-1 ml-1" style={{ width: "25%" }} src="https://cdn-icons-png.flaticon.com/512/61/61109.png" alt="" />
                             </a>
+
+                            </div>
+                            <div className="col">
+                                <a href="https://github.com/rony171998" target="_blank" rel="noopener noreferrer">
+                                <img className="card-img mt-1 ml-1" style={{ width: "25%" }} src="https://cdn-icons-png.flaticon.com/512/2111/2111432.png" alt="" />
+                            </a>
+
+                            </div>
+                                                       
                         </div>
 
                     </div>
+                    
 
                 </div>
 
             </div>
 
             <div >
-                <h4 className="card-title" style={{textAlign:"center"}}>Rony Puche web &copy; 2022</h4>
+                <h4 className="card-title  text-white" style={{textAlign:"center"}}>Rony Puche web &copy; 2022</h4>
             </div>
         </footer>
     );
