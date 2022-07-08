@@ -29,12 +29,6 @@
   color: #61dafb;
 }
 
-.mifotobox {
-  border-radius: 62px;
-  background: linear-gradient(145deg, #e6e6e6, #ffffff);
-  box-shadow: 50px 50px 73px #d4d4d4,
-    -50px -50px 73px #ffffff;
-}
 
 
 @keyframes App-logo-spin {
@@ -45,4 +39,26 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.swiper-container {
+  list-style: none;
+}
+
+.pagination {
+  bottom: 0;
+  padding-bottom: 4px;
+}
+
+.slide {
+  text-align: center;
+  height: 320px;
+  line-height: 320px;
+  background: #364d79;
+  overflow: hidden;
 }

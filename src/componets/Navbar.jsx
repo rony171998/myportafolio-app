@@ -5,31 +5,32 @@ import { Container, Navbar, Nav, NavDropdown} from "react-bootstrap";
 const NavBar = () => {
 
     return (
-        <Navbar className="navbar navbar-expand-lg navbar-dark bg-primary mb-3">
+        <Navbar className="navbar navbar-expand-lg navbar-dark bg-primary mb-3" fixed="top" id="navbar">
 
         <Container>
 
-            <Navbar.Brand href="/">Smart-Mark</Navbar.Brand>
+            <Navbar.Brand href="/">SMark-Portfolio</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">
-                    <Nav.Link href="/">Home</Nav.Link>
-                    <Nav.Link href="#/news">News</Nav.Link>
+                    <Nav.Link href="#profile">Home</Nav.Link>
+                    <Nav.Link href="#skills">Skills</Nav.Link>
                     {/* <Nav.Link href="#/favorites">Favorites</Nav.Link> */}
 
-                    <NavDropdown title="Products" id="basic-nav-dropdown">
-                        <NavDropdown.Item href="/">
-                            Smart TV
+                    <NavDropdown title="Proyects" id="basic-nav-dropdown">
+                        <NavDropdown.Item href="#proyect0">
+                            E-commerce
                         </NavDropdown.Item>
-                        <NavDropdown.Item href="/">
-                            Smart phone
+                        <NavDropdown.Item href="#proyect1">
+                            Rick and Morty Wiki
                         </NavDropdown.Item>
-                        <NavDropdown.Item href="/">
-                            Computers
+                        <NavDropdown.Item href="#proyect2">
+                            Farm App
                         </NavDropdown.Item>
                         <NavDropdown.Divider />
-                        <NavDropdown.Item href="/">Kichen</NavDropdown.Item>
+                        <NavDropdown.Item href="#proyect3">Pokemon App</NavDropdown.Item>
                     </NavDropdown>
+                    <Nav.Link href="#contactme">Contact Me</Nav.Link>
 
 
                 </Nav>

@@ -1,59 +1,88 @@
 import React from 'react';
 import "bootswatch/dist/lux/bootstrap.min.css";
-import { Col, Container, ModalTitle, ProgressBar, Row } from 'react-bootstrap';
+import { Col, Card, Accordion, ProgressBar, Row } from 'react-bootstrap';
 
 const Skills = () => {
     return (
 
-        <Container className='mb-3'>
-            <h1>Skills</h1>
-            <Row>
+        <Card className='m-5 p-5' id='skills'>
+            <Card.Header className='text-white bg-primary mb-5'>Skills</Card.Header>
+            
+            <Row className='mb-5 p-5'>
                 <Col>
-                    <h3>Frontend</h3>
-                    <ModalTitle>HTML</ModalTitle>
-                    <ProgressBar>
-                        <ProgressBar animated now={45} /><br />
-                    </ProgressBar>
-                    <h3>CSS</h3>
-                    <ProgressBar>
-                        <ProgressBar animated now={55} /><br />
-                    </ProgressBar>
-                    <h3>JavaScrips</h3>
-                    <ProgressBar>
-                        <ProgressBar animated now={65} /><br />
-                    </ProgressBar>
-                    <h3>React</h3>
-                    <ProgressBar>
-                        <ProgressBar animated now={75} /><br />
-                    </ProgressBar>
-                </Col>
-                <Col>
-                    <h3>Backend</h3>
-                    <h4>NODE JS</h4>
-                    <ProgressBar>
-                        <ProgressBar animated now={45} /><br />
-                    </ProgressBar>
-                    <h4>Express JS</h4>
-                    <ProgressBar>
-                        <ProgressBar animated now={55} /><br />
-                    </ProgressBar>
+                    
+                    <Accordion eventKey="0">
+                        <Accordion.Item>
+                            <Accordion.Header>Frontend</Accordion.Header>
+                            <Accordion.Body>
+                                <Card.Text>Html</Card.Text>
+                                <ProgressBar>
+                                    <ProgressBar animated now={95} /><br />
+                                </ProgressBar>
+                                <Card.Text>Css</Card.Text>
+                                <ProgressBar>
+                                    <ProgressBar animated now={85} /><br />
+                                </ProgressBar>
+                                <Card.Text>Javascript</Card.Text>
+                                <ProgressBar>
+                                    <ProgressBar animated now={95} /><br />
+                                </ProgressBar>
+                                <Card.Text>React Js</Card.Text>
+                                <ProgressBar>
+                                    <ProgressBar animated now={95} /><br />
+                                </ProgressBar>
+                            </Accordion.Body>
+
+                        </Accordion.Item>
+                    </Accordion>
+
 
                 </Col>
                 <Col>
-                    <h3>Other Skills</h3>
-                    <h4>Git</h4>
-                    <ProgressBar>
-                        <ProgressBar animated now={45} /><br />
-                    </ProgressBar>
-                    <h4>Flutter</h4>
-                    <ProgressBar>
-                        <ProgressBar animated now={55} /><br />
-                    </ProgressBar>
+                    <Accordion defaultActiveKey="1">
+                        <Accordion.Item>
+                            <Accordion.Header>Backend</Accordion.Header>
+                            <Accordion.Body>
+                                <Card.Text>Node Js</Card.Text>
+                                <ProgressBar>
+                                    <ProgressBar animated now={65} /><br />
+                                </ProgressBar>
+                                <Card.Text>Express Js</Card.Text>
+                                <ProgressBar>
+                                    <ProgressBar animated now={55} /><br />
+                                </ProgressBar>
+                                <Card.Text>SQL</Card.Text>
+                                <ProgressBar>
+                                    <ProgressBar animated now={55} /><br />
+                                </ProgressBar>
+                            </Accordion.Body>
+                        </Accordion.Item>
+                    </Accordion>
+                    
+                </Col>
+                <Col>
+                    <Accordion defaultActiveKey="2">
+                        <Accordion.Item>
+                            <Accordion.Header>Others</Accordion.Header>
+                            <Accordion.Body>
+                                <Card.Text>Git</Card.Text>
+                                <ProgressBar>
+                                    <ProgressBar animated now={55} /><br />
+                                </ProgressBar>
+                                <Card.Text>Flutter</Card.Text>
+                                <ProgressBar>
+                                    <ProgressBar animated now={25} /><br />
+                                </ProgressBar>
+                                
+                            </Accordion.Body>
+                        </Accordion.Item>
+                    </Accordion>
+                    
 
                 </Col>
             </Row>
 
-        </Container>
+        </Card>
 
     );
 };

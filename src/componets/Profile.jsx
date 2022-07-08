@@ -5,30 +5,29 @@ import { Row, Col, Card, Container } from 'react-bootstrap';
 
 const Home = () => {
     return (
-            <Container className='mb-3'>
+            <Container className='m-5 p-5' id='profile'>
 
-                <Row>
+                <Row className='mb-5'>
                     <Col>
 
                         <Card.Img
                             style={{
-                                width: "80%",
+                               
                                 borderRadius: "52px",
                                 background: "linear-gradient(45deg, #ffffff, #dedede)",
                                 boxShadow: "-50px 50px 100px #212121,50px -50px 100px #ffffff",
 
                             }}
-                            src='./Logos-Imágenes/mifoto-removebg-preview.png' className="mifoto">
+                            src='./Logos-Imágenes/mifoto-removebg-preview.png' className="mifoto mt-5">
 
                         </Card.Img>
 
                     </Col>
-                    <Col>
-
-                        <Card.Header className='mb-3'>
-                            <h1 >Hi, I'm Rony</h1>
-                            <h2>UX/IU Designer</h2>
-                            <h2>Full Stack Web Developer</h2>
+                    <Col className='mt-5'>
+                        
+                        <Card.Header className='m-5 p-5'>
+                            <Card.Title className='text-center' >Hi, I'm Rony</Card.Title>
+                            <Card.Subtitle className='text-center' >I'm a Full Stack Web Developer</Card.Subtitle>
                         </Card.Header>
 
                         <Row >
@@ -42,7 +41,7 @@ const Home = () => {
 
                         </Row>
 
-                        <Card.Link href="#Contactos">
+                        <Card.Link href="#contactme">
                             <Card.Img className="mail" src="https://cdn-icons-png.flaticon.com/512/2258/2258570.png" alt="Email Icon" style={{ width: "25%" }}></Card.Img>
                             <Card.Text>contactame</Card.Text>
                         </Card.Link>

@@ -1,0 +1,117 @@
+  /*Card */
+.cardproyects {
+    position: relative;   
+    transition: box-shadow .3s ease-in-out;
+}
+.card-infoproyects {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+   }
+  
+  .card-imgproyects{
+    border-radius: 5%;
+  }
+  /*Buttons*/
+    .social-media {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    padding: 0 5rem;
+    transform: translateY(-100%);
+    z-index: 3;
+   }
+   
+   .social-media li {
+    background: #f5f5f5;
+    padding: 10px 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0;
+    transition: all .3s ease-in;
+   }
+
+   .card-imgproyects2 {
+    background: #f5f5f5;
+    padding: 10px 12px;
+    cursor: pointer;
+    opacity: 0;
+    transition: all .3s ease-in;
+    position: absolute;
+   }
+   
+   /*Text*/
+   .titleproyects {
+    font-size: 1.5em;
+    font-weight: 500;
+   }
+   
+   .subtitleproyects {
+    letter-spacing: 1px;
+    font-size: 0.9em;
+   }
+   
+   ul {
+    list-style: none;
+   }
+   
+   
+   /* Hover */
+  
+   .cardproyects:hover .social-media li {
+    transform: translateY(-5%);
+    opacity: 1;
+   }
+
+   .cardproyects:hover .card-imgproyects2 {
+    transform: translateX(-99%);
+    opacity: 1;
+    transition-delay: 0s;
+   }
+   
+   .cardproyects:hover .social-media li:nth-child(1) {
+    transition-delay: 0s;
+   }
+   
+   .cardproyectos:hover .social-media li:nth-child(2) {
+    transition-delay: .1s;
+   }
+   
+   .cardproyects:hover .social-media li:nth-child(3) {
+    transition-delay: .2s;
+   }
+   
+   .cardproyects:hover .social-media li:nth-child(2) {
+    transition-delay: .1s;
+   }
+   
+   .cardproyects:hover .social-media li:nth-child(3) {
+    transition-delay: .2s;
+   }
+
+   
+  
+ .figure {
+    position: relative;
+    object-fit: contain;
+}
+.figure .card-imgproyect {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 1.2s;
+}
+.figure:hover .card-imgproyect {
+  opacity: 1;
+}
+
+
+
