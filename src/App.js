@@ -7,7 +7,7 @@ import {
     Proyects,
     Contactme,
     Footer,
-} from "./componets";
+} from "./components";
 import { Container } from "react-bootstrap";
 
 function App() {
