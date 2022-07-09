@@ -4,7 +4,7 @@ import { Button, Card, Form } from 'react-bootstrap';
 const Contactme = () => {
     return (
         
-        <Card className='m-5 p-5' id='contactme'>
+        <Card className='mb-5 mt-5 pt-5 pb-5' id='contactme'>
             
             <Card.Header className='text-white bg-primary mt-5 mb-5'>Contact Me</Card.Header>
             <Card.Body>

@@ -5,13 +5,13 @@ import { Col, Card, Accordion, ProgressBar, Row } from 'react-bootstrap';
 const Skills = () => {
     return (
 
-        <Card className='m-5 p-5' id='skills'>
+        <Card className='mb-5 pb-5' id='skills'>
             <Card.Header className='text-white bg-primary mb-5'>Skills</Card.Header>
             
             <Row className='mb-5 p-5'>
                 <Col>
                     
-                    <Accordion eventKey="0">
+                    <Accordion eventkey="0">
                         <Accordion.Item>
                             <Accordion.Header>Frontend</Accordion.Header>
                             <Accordion.Body>

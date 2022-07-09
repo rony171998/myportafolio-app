@@ -105,7 +105,7 @@ const Proyects = () => {
                                 <Card className='text-white bg-primary'>
 
                                     <Card.Body>
-                                        <Accordion eventKey="0">
+                                        <Accordion eventkey="0">
 
                                             <Accordion.Item>
                                                 <Accordion.Header>{proyect.name}</Accordion.Header>
