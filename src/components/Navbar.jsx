@@ -5,7 +5,7 @@ import { Container, Navbar, Nav, NavDropdown} from "react-bootstrap";
 const NavBar = () => {
 
     return (
-        <Navbar className="navbar navbar-expand-lg navbar-dark bg-primary mb-3" fixed="top" id="navbar">
+        <Navbar className=" navbar-dark bg-primary mb-3" fixed="top" expand="lg" id="navbar">
 
         <Container>
 
