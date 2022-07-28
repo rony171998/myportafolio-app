@@ -9,7 +9,7 @@ const Home = () => {
 
                 <CardGroup>
 
-                    <Card className='border-light mt-5 mb-5 mx-1'>
+                    <Card className='border-light mt-5 mb-5 mx-1 p-5'>
 
                         <Card.Img
                             style={{
@@ -24,11 +24,11 @@ const Home = () => {
                         </Card.Img>
 
                     </Card>
-                    <Card className='border-light mb-5 mx-1'>
+                    <Card className='border-light mb-5 mx-1 p-5'>
                         
                         <Card.Header className='mt-5 pt-5 pb-5'>
                             <Card.Title>Hi, I'm Rony</Card.Title>
-                            <Card.Subtitle>I'm a Full Stack Web Developer</Card.Subtitle>
+                            <Card.Subtitle>I'm a Full Stack Web Developer Stack MERN</Card.Subtitle>
                             <Card.Text></Card.Text>
                             <Card.Text>High level in web design and development knowledge, producing quality work.</Card.Text>
 

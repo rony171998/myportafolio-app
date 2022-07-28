@@ -16,6 +16,8 @@ const Proyects = () => {
             technologies: [
                 './Íconos/physics.png',
                 './Íconos/bootstrap.png',
+                './Íconos/redux.png',
+                
             ]
         },
         {
@@ -60,6 +62,7 @@ const Proyects = () => {
             technologies: [
                 './Íconos/physics.png',
                 './Íconos/bootstrap.png',
+                './Íconos/redux.png',
             ]
         }
 
