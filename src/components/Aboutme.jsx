@@ -1,13 +1,12 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { Card, Col, Row } from 'react-bootstrap';
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 
 
 const Aboutme = () => {
-    const ref = useRef(null);
-    const isInView = useInView(ref);
+    
     return (
-        <Card  ref={ref} className='mt-5 mb-5 ' id="aboutme">
+        <Card className='mt-5 mb-5 ' id="aboutme">
             <Card.Header className='bg-primary text-white'>
                 <Card.Title >About Me</Card.Title>
             </Card.Header>
