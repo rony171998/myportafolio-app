@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import "bootswatch/dist/lux/bootstrap.min.css";
 import { Col, Card, Accordion, ProgressBar, Row, Tabs, Tab } from 'react-bootstrap';
 import { Radar,
@@ -6,8 +6,12 @@ import { Radar,
     PolarGrid,
     PolarAngleAxis,
     PolarRadiusAxis, } from 'recharts';
+    import { motion, useInView } from 'framer-motion';
 
 const Skills = () => {
+    const ref = useRef(null);
+    const isInView = useInView(ref);
+
     const skills = [
         {
             name: "Front-End",
@@ -81,22 +85,29 @@ const Skills = () => {
 
     return (
 
-        <Card className='mb-5 pb-5' id='skills'>
-            <Card.Header className='text-white bg-primary mb-5'>Skills</Card.Header>
-
+        <Card ref={ref} className='mb-5 pb-5' id='skills'>
+            <Card.Header className='bg-primary text-white'>
+                <Card.Title >Skills</Card.Title>
+            </Card.Header>
             <Tabs defaultActiveKey="home"
                 id="justify-tab-example"
                 className=""
                 justify>
-                <Tab eventKey="home" title="Stast Bar">
+                <Tab  eventKey="home" title="Stast Bar">
 
                     <Row className='p-5'>
                         {skills.map((skill, index) => {
+                            
                             return (
                                 <Col key={index}>
-
-                                    <Accordion eventkey={index}>
-                                        <Accordion.Item>
+                                    <motion.div                          
+                                        animate={{  opacity: isInView ? 1 : 0 }}
+                                        exit={{ opacity: 0 }}
+                                        transition={{ duration: index+1 }}
+                                        whileHover={{ scale: 1.1 }}
+                                    >
+                                        <Accordion >
+                                        <Accordion.Item eventkey={index}>
                                             <Accordion.Header>{skill.name}</Accordion.Header>
 
                                             {skill.Tecnologies.map((Tecnology, index) => {
@@ -112,6 +123,10 @@ const Skills = () => {
                                             )}
                                         </Accordion.Item>
                                     </Accordion>
+
+                                    </motion.div>
+
+                                    
                                 </Col>
                             )
                         })}
@@ -130,8 +145,7 @@ const Skills = () => {
                                         height={300}
                                         outerRadius="90%"
                                         data={skill.Tecnologies}
-
-                                        
+                               
                                     >
                                         <PolarGrid />
                                         <PolarAngleAxis dataKey="name" />
@@ -147,8 +161,6 @@ const Skills = () => {
 
                 </Tab>
             </Tabs>
-
-
 
         </Card>
 

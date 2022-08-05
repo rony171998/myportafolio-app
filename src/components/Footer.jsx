@@ -11,7 +11,7 @@ const Footer = () => {
                             <p className="card-text mt-1">Valledupar - Colombia</p>
                             <div className="card-body">
                                 <h4 className="card-header text-black bg-secondary mb-3">Curriculum</h4>
-                                <a className="card-link" href="https://drive.google.com/file/d/1FUZbwYadWSUwR8WSUBTO5uI4V-SdOWR1/view?usp=sharing"
+                                <a className="card-link" href="https://drive.google.com/file/d/1T7fZFlxlmmCT1fLnE9dUQLkp2wTIv5ED/view?usp=sharing"
                                     target="_blank" rel="noopener noreferrer">
                                     <img className="card-img" src="https://cdn-icons-png.flaticon.com/512/3135/3135731.png" alt="" style={{ width: "25%" }} />
                                 </a>
@@ -30,11 +30,9 @@ const Footer = () => {
                             <a className="card-link" href="https://rickandmorty-rony.netlify.app/" target="_blank" rel="noopener noreferrer">
                                 <p className="card-text mt-1 text-white">Rick and Morty Wiki </p>
                             </a>
-                            <a className="card-link" href="https://laprovidencia-web.netlify.app/" target="_blank" rel="noopener noreferrer">
-                                <p className="card-text text-white">Farm React (Working)</p>
-                            </a>
-                            <a className="card-link" href="https://ronyecomerce.netlify.app/" target="_blank" rel="noopener noreferrer">
-                                <p className="card-text text-white">Web Store</p>
+                            
+                            <a className="card-link" href="https://pokemons-rony.netlify.app/" target="_blank" rel="noopener noreferrer">
+                                <p className="card-text text-white">Pokedex Pokemons</p>
                             </a>
 
                         </div>

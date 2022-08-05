@@ -1,7 +1,25 @@
-import React from 'react';
-import { Accordion, Button, Card, CardGroup, Container } from 'react-bootstrap';
+import React, {  useState } from 'react';
+import { Button, Card, CardGroup, Container } from 'react-bootstrap';
+import { motion } from "framer-motion";
+
+const cardVariants = {
+    offscreen: {
+        opacity: 0,                
+    },
+    onscreen: {
+        opacity: 1,
+
+        transition: {
+            type: "spring",
+            bounce: 0.4,
+            duration: 1.8
+        }
+    }
+};
 
 const Proyects = () => {
+    const [isOpen, setIsOpen] = useState(true);
+    
 
     const proyects = [
         {
@@ -17,7 +35,7 @@ const Proyects = () => {
                 './Íconos/physics.png',
                 './Íconos/bootstrap.png',
                 './Íconos/redux.png',
-                
+
             ]
         },
         {
@@ -35,21 +53,7 @@ const Proyects = () => {
             ]
         }
         ,
-        {
-            name: 'Farm App',
-            description: 'Farm App is a website that allows you to managment your farm.',
-            created: 'Website responsive created with React.js JavaScript , Css, and ApiRest',
-            url: 'https://laprovidencia-web.netlify.app/',
-            image: [
-                './Logos-Imágenes/farm.png',
-                './Logos-Imágenes/farm2.png',
-            ],
-            technologies: [
-                './Íconos/physics.png',
-                './Íconos/css.png',
-            ]
-        }
-        ,
+
         {
             name: 'Pokemon App',
             description: 'Pokemon App is a website that allows you to view pokemons and their stats.',
@@ -72,74 +76,91 @@ const Proyects = () => {
 
         <Card className='text-white bg-primary' id='proyects'>
             <Container >
-                <Card.Header className='text-center m-5'>Proyects</Card.Header>
+                <Card.Header className='bg-primary text-white'>
+                    <Card.Title >Proyects</Card.Title>
+                </Card.Header>
                 {proyects.map((proyect, index) => {
                     return (
-                        <Card key={index} className='mb-5 text-white bg-primary ' id={"proyect"+index}>
-                            <CardGroup >
-                                <Card className='text-white bg-primary '>
+                        <motion.div
+                            whileHover={ { scale: 1.1 } }
+                            initial="offscreen"
+                            whileInView="onscreen"
+                            viewport={{ amount: 0.8 }}
+                            
+                        >
+                            <motion.div variants={cardVariants}>
+                                <Card key={index} className='mb-5 text-white bg-primary ' id={"proyect" + index}
 
-                                    <Card.Body className='cardproyects'>
-                                        <Card.Link href={proyect.url}  target="_blank" rel="noopener noreferrer">
-                                            <div className='figure'>
-                                                <Card.Img className="card-imgproyects" src={proyect.image[0]} />
-                                                <Card.Img className="card-imgproyect" src={proyect.image[1]} />
-                                            </div>
-                                            
-                                        </Card.Link>
-                                        <ul className="social-media">
+                                >
+                                    <CardGroup >
+                                        <Card className='text-white bg-primary '>
 
-                                            {proyect.technologies.map((image, index) => {
-                                                return (
+                                            <Card.Body className='cardproyects'>
+                                                <Card.Link href={proyect.url} target="_blank" rel="noopener noreferrer">
+                                                    <div className='figure'>
+                                                        <Card.Img className="card-imgproyects" src={proyect.image[0]} />
+                                                        <Card.Img className="card-imgproyect" src={proyect.image[1]} />
+                                                    </div>
 
-                                                    <li key={index}>
-                                                        <Card.Img
-                                                            className="iconimg" src={image} alt="CardIcon">
-                                                        </Card.Img>
-                                                    </li>
-                                                )
-                                            }
-                                            )}
+                                                </Card.Link>
+                                                <ul className="social-media">
 
-                                        </ul>
+                                                    {proyect.technologies.map((image, index) => {
+                                                        return (
 
-                                    </Card.Body>
+                                                            <li key={index}>
+                                                                <Card.Img
+                                                                    className="iconimg" src={image} alt="CardIcon">
+                                                                </Card.Img>
+                                                            </li>
+                                                        )
+                                                    }
+                                                    )}
+
+                                                </ul>
+
+                                            </Card.Body>
+                                        </Card>
+                                        <Card  className='text-white bg-primary'>
+
+                                            <Card.Body>
+                                                <motion.div
+                                                    layout
+                                                    data-isOpen={isOpen}
+                                                    initial={{ borderRadius: 50 }}
+                                                    
+                                                    className="parent"
+                                                    onClick={() => setIsOpen(!isOpen)}
+                                                    
+                                                >
+                                                    <motion.div layout className="child" 
+                                                        
+                                                    />
+                                                    
+                                                        <Card className='text-white bg-primary'>
+                                                            <Card.Header><Card.Title>{proyect.name}</Card.Title></Card.Header>
+                                                            <Card.Body>
+
+                                                                <Card.Text>{proyect.description}</Card.Text>
+                                                                <Card.Text>{proyect.created}</Card.Text>
+                                                            </Card.Body>
+                                                            <Card.Link href={proyect.url} target="_blank" rel="noopener noreferrer">
+                                                                <Button className='text-black bg-light'>Visit Proyect</Button>
+                                                            </Card.Link>
+
+                                                        </Card>
+                                                </motion.div>
+
+                                            </Card.Body>
+                                        </Card>
+                                    </CardGroup>
                                 </Card>
-                                <Card className='text-white bg-primary'>
 
-                                    <Card.Body>
-                                        <Accordion eventkey="0">
-
-                                            <Accordion.Item>
-                                                <Accordion.Header>{proyect.name}</Accordion.Header>
-                                                <Accordion.Body>
-
-                                                    <Card >
-                                                        <Card.Body className='text-white bg-primary'>
-                                                            <Card.Text>
-                                                                {proyect.description}
-                                                            </Card.Text>
-                                                            <Card.Text>
-                                                                {proyect.created}
-                                                            </Card.Text>
-                                                        </Card.Body>
-                                                    </Card>
-
-                                                </Accordion.Body>
-
-                                            </Accordion.Item>
-                                        </Accordion>
-                                        <Card.Link href={proyect.url}  target="_blank" rel="noopener noreferrer">
-                                            <Button className='text-black bg-secondary'>Visit Proyect</Button>
-                                        </Card.Link>
-                                        
-                                    </Card.Body>
-                                </Card>
-                            </CardGroup>
-                        </Card>
+                            </motion.div>
+                        </motion.div>
                     )
                 })}
-               
+
             </Container>
 
         </Card>

@@ -26,10 +26,11 @@ const Contactme = () => {
 
     return (
 
-        <Card className='mb-5 mt-5 pt-5 pb-5' id='contactme'>
+        <Card className='mb-5 mt-5 pb-5' id='contactme'>
 
-            <Card.Header className='text-white bg-primary mt-5 mb-5'>Contact Me</Card.Header>
-            <Card.Body>
+            <Card.Header className='bg-primary text-white'>
+                <Card.Title >Contact Me</Card.Title>
+            </Card.Header><Card.Body>
                 <Form className="mb-3" ref={form} onSubmit={sendEmail}>
 
                     <Form.Group className="mb-3" controlId="formBasicName">
@@ -50,7 +51,7 @@ const Contactme = () => {
                         <Form.Control as="textarea" rows="4" placeholder="Enter your message" name="message" />
                     </Form.Group>
 
-                    <Button variant="primary" type="submit" id="button" value="Send">
+                    <Button variant="outline-primary" type="submit" id="button" value="Send">
                         Send Email
                     </Button>
                 </Form>

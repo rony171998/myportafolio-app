@@ -3,6 +3,7 @@ import "./styles/styles.css";
 import {
     NavBar,
     Profile,
+    Aboutme,
     Skills,
     Proyects,
     Contactme,
@@ -16,9 +17,11 @@ function App() {
             <NavBar />
             <Container>
                 <Profile />
+                <Aboutme/>
                 <Skills />
             </Container>
             <Proyects />
+            
 
             <Container>
                 <Contactme />

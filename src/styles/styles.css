@@ -6,12 +6,15 @@
 .card-infoproyects {
     position: absolute;
     bottom: 0;
-    width: 100%;
+    width: 150%;
     padding: 1rem;
     text-align: center;
    }
   
   .card-imgproyects{
+    border-radius: 5%;
+  }
+  .card-imgproyect{
     border-radius: 5%;
   }
   /*Buttons*/
@@ -113,5 +116,33 @@
   opacity: 1;
 }
 
+.parent {
+  background: white;
+  width: 1rem;
+  height: 17rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.parent[data-isOpen="true"] {
+  width: 42rem;
+  height: 17rem;
+}
+
+.child {
+  
+  width: 5rem;
+  height: 2.3rem;
+  background: #0a0207;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+* {
+  box-sizing: border-box;
+}
 
 
