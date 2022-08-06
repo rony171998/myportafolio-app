@@ -22,7 +22,6 @@ function App() {
             </Container>
             <Proyects />
             
-
             <Container>
                 <Contactme />
                 

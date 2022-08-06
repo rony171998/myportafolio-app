@@ -81,7 +81,9 @@ const Proyects = () => {
                 </Card.Header>
                 {proyects.map((proyect, index) => {
                     return (
+                        
                         <motion.div
+                            key={index}
                             whileHover={ { scale: 1.1 } }
                             initial="offscreen"
                             whileInView="onscreen"
@@ -126,7 +128,7 @@ const Proyects = () => {
                                             <Card.Body>
                                                 <motion.div
                                                     layout
-                                                    data-isOpen={isOpen}
+                                                    data-isopen={isOpen}
                                                     initial={{ borderRadius: 50 }}
                                                     
                                                     className="parent"

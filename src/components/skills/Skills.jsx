@@ -1,17 +1,17 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import "bootswatch/dist/lux/bootstrap.min.css";
-import { Col, Card, Accordion, ProgressBar, Row, Tabs, Tab } from 'react-bootstrap';
-import { Radar,
+import { Col, Card, Accordion, Row, Tabs, Tab } from 'react-bootstrap';
+import {
+    Radar,
     RadarChart,
     PolarGrid,
     PolarAngleAxis,
-    PolarRadiusAxis, } from 'recharts';
-    import { motion, useInView } from 'framer-motion';
+    PolarRadiusAxis,
+} from 'recharts';
+import { motion, useInView, Reorder } from 'framer-motion';
+import Item from './Item';
 
 const Skills = () => {
-    const ref = useRef(null);
-    const isInView = useInView(ref);
-
     const skills = [
         {
             name: "Front-End",
@@ -82,7 +82,11 @@ const Skills = () => {
 
 
     ];
+    const ref = useRef(null);
+    const isInView = useInView(ref);
 
+    const [items, setItems] = useState(skills.map(skill => skill.Tecnologies.map(item => item.name)));
+    //console.log(items);
     return (
 
         <Card ref={ref} className='mb-5 pb-5' id='skills'>
@@ -93,40 +97,41 @@ const Skills = () => {
                 id="justify-tab-example"
                 className=""
                 justify>
-                <Tab  eventKey="home" title="Stast Bar">
+                <Tab eventKey="home" title="Stast Bar">
 
                     <Row className='p-5'>
                         {skills.map((skill, index) => {
-                            
+
                             return (
                                 <Col key={index}>
-                                    <motion.div                          
-                                        animate={{  opacity: isInView ? 1 : 0 }}
+                                    <motion.div
+                                        animate={{ opacity: isInView ? 1 : 0 }}
                                         exit={{ opacity: 0 }}
-                                        transition={{ duration: index+1 }}
+                                        transition={{ duration: index + 1 }}
                                         whileHover={{ scale: 1.1 }}
                                     >
-                                        <Accordion >
-                                        <Accordion.Item eventkey={index}>
-                                            <Accordion.Header>{skill.name}</Accordion.Header>
+                                        <Accordion>
+                                            <Accordion.Item>
+                                                <Accordion.Header>{skill.name}</Accordion.Header>
+                                                <Accordion.Body>
+                                                    
+                                                    <Reorder.Group axis="y" onReorder={()=> setItems} values={items[index]}>
+                                                        {
+                                                            items[index].map((item) => (
+                                                                <Item key={item} item={item} />
+                                                            ))
+                                                        }
 
-                                            {skill.Tecnologies.map((Tecnology, index) => {
-                                                return (
-                                                    <Accordion.Body key={index}>
-                                                        <Card.Text>{Tecnology.name}</Card.Text>
+                                                    </Reorder.Group>
+                                                </Accordion.Body>
+                                            </Accordion.Item>
 
-                                                        <ProgressBar animated now={Tecnology.level} />
 
-                                                    </Accordion.Body>
-                                                )
-                                            }
-                                            )}
-                                        </Accordion.Item>
-                                    </Accordion>
+                                        </Accordion>
 
                                     </motion.div>
 
-                                    
+
                                 </Col>
                             )
                         })}
@@ -134,25 +139,25 @@ const Skills = () => {
 
                 </Tab>
                 <Tab eventKey="Stast Radar" title="Stast Radar">
-                    <Row className='p-5' style={{overflow:"auto"}}>
+                    <Row className='p-5' style={{ overflow: "auto" }}>
                         {skills.map((skill, index) => {
                             return (
                                 <Col key={index}>
 
                                     <RadarChart
-                                        
+
                                         width={470}
                                         height={300}
                                         outerRadius="90%"
                                         data={skill.Tecnologies}
-                               
+
                                     >
                                         <PolarGrid />
                                         <PolarAngleAxis dataKey="name" />
                                         <PolarRadiusAxis />
                                         <Radar name="Mike" dataKey="level" stroke="#000" fill="#000" fillOpacity={0.7} />
                                     </RadarChart>
-                                        
+
                                 </Col>
                             )
                         })}

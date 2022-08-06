@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, Col, Row } from 'react-bootstrap';
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 
 const Aboutme = () => {
+    const [selectedId, setSelectedId] = useState(null)
     
     return (
         <Card className='mt-5 mb-5 ' id="aboutme">
@@ -31,100 +32,142 @@ const Aboutme = () => {
                 <Row className='m-5'>
                     <Col  >
 
+
                         <Card>
                             <Card.Body>
 
-                                <Card.Link href='https://www.academlo.com/' target="_blank" rel="noopener noreferrer">
-                                    <motion.div
-                                        className="box"
-                                        animate={{
-                                            scale: [0.5, 0.7, 0.7, 0.5, 0.5],
-                                            rotate: [0, 90, 180, 240, 360],
-                                            borderRadius: ["0%", "0%", "50%", "50%", "0%"]
-                                        }}
-                                        transition={{
-                                            duration: 5,
-                                             repeat: Infinity,
-                                             delay: 5  
-                                        }}
-                                    >
-                                        <Card.Img style={{ width: "10rem" }} src='./Logos-Imágenes/logo-sena.jpg' />
 
-                                    </motion.div>
-                                    
-                                    <br />
-                                    SENA
-                                    2017 - 2018
-                                </Card.Link>
+                                <motion.div
+                                    layout
+                                    onClick={() => setSelectedId(1)}
+                                    className="box"
+                                    animate={{
+                                        scale: [0.5, 0.7, 0.7, 0.5, 0.5],
+                                        rotate: [0, 90, 180, 240, 360],
+                                        borderRadius: ["0%", "0%", "50%", "50%", "0%"]
+                                    }}
+                                    transition={{
+                                        duration: 5,
+                                        repeat: Infinity,
+                                        delay: 5
+                                    }}
+                                >
+                                    <Card.Img style={{ width: "10rem" }} src='./Logos-Imágenes/logo-sena.jpg' />
 
+                                </motion.div>
 
+                                <br />
+                                SENA
+                                2017 - 2018
 
                             </Card.Body>
+                            <AnimatePresence>
+                                {
+
+                                    selectedId === 1 &&
+                                    <motion.div
+                                        layout
+                                    >
+                                        <motion.button onClick={() => setSelectedId(null)} >x</motion.button>
+                                        <Card.Img style={{ width: "10rem" }} src='./Logos-Imágenes/certificadosena.png'></Card.Img>
+                                        
+                                    </motion.div>
+
+                                }
+                            </AnimatePresence>
+
                         </Card>
 
                     </Col>
                     <Col >
                         <Card>
                             <Card.Body >
-                                <Card.Link href='https://www.academlo.com/' target="_blank" rel="noopener noreferrer">
-                                    
+
                                 <motion.div
-                                        className="box"
-                                        animate={{
-                                            scale: [0.5, 0.7, 0.7, 0.5, 0.5],
-                                            rotate: [0, 90, 180, 240, 360],
-                                            borderRadius: ["0%", "0%", "50%", "50%", "0%"]
-                                        }}
-                                        transition={{
-                                            duration: 5,
-                                             repeat: Infinity,
-                                             delay: 5  
-                                        }}
-                                    >
-                                        <Card.Img style={{ width: "10rem" }} src='./Logos-Imágenes/logo_academlo 5.png'></Card.Img>
-                                    
+                                    layout
+                                    layoutId={2}
+                                    onClick={() => setSelectedId(2)}
+                                    className="box"
+                                    animate={{
+                                        scale: [0.5, 0.7, 0.7, 0.5, 0.5],
+                                        rotate: [0, 90, 180, 240, 360],
+                                        borderRadius: ["0%", "0%", "50%", "50%", "0%"]
+                                    }}
+                                    transition={{
+                                        duration: 5,
+                                        repeat: Infinity,
+                                        delay: 5
+                                    }}
+                                >
+                                    <Card.Img style={{ width: "10rem" }} src='./Logos-Imágenes/logo_academlo 5.png'></Card.Img>
+
+                                </motion.div>
+
+                                <br />
+                                Academlo
+                                2022/2 - 2022/8
+
+                            </Card.Body>
+                            <AnimatePresence>
+                                {
+
+                                    selectedId === 2 &&
+                                    <motion.div>
+                                        <motion.button onClick={() => setSelectedId(null)} >x</motion.button>
+                                        <Card.Img style={{ width: "20rem" }} src='./Logos-Imágenes/certificado.png'></Card.Img>
+                                        
                                     </motion.div>
 
-                                    <br />
-                                    Academlo
-                                    2022/2 - 2022/8
-                                </Card.Link>
-                            </Card.Body>
+                                }
+                            </AnimatePresence>
+
                         </Card>
 
                     </Col>
                     <Col>
                         <Card >
                             <Card.Body>
-                                <Card.Link href='https://www.academlo.com/' target="_blank" rel="noopener noreferrer">
+
                                 <motion.div
-                                        className="box"
-                                        animate={{
-                                            scale: [0.5, 0.7, 0.7, 0.5, 0.5],
-                                            rotate: [0, 90, 180, 240, 360],
-                                            borderRadius: ["0%", "0%", "50%", "50%", "0%"]
-                                        }}
-                                        transition={{
-                                            duration: 5,
-                                             repeat: Infinity,
-                                             delay: 5  
-                                        }}
-                                    >
-                                      <Card.Img style={{ width: "10rem" }} src='./Logos-Imágenes/logo_upc.png'></Card.Img>
-                                      
-                                    </motion.div>
-                                    <br />
-                                    Universida Popular del cesar
-                                    2019 - 2023
-                                </Card.Link>
+                                    layout
+                                    onClick={() => setSelectedId(3)}
+                                    className="box"
+                                    animate={{
+                                        scale: [0.5, 0.7, 0.7, 0.5, 0.5],
+                                        rotate: [0, 90, 180, 240, 360],
+                                        borderRadius: ["0%", "0%", "50%", "50%", "0%"]
+                                    }}
+                                    transition={{
+                                        duration: 5,
+                                        repeat: Infinity,
+
+                                    }}
+                                >
+                                    <Card.Img style={{ width: "10rem" }} src='./Logos-Imágenes/logo_upc.png'></Card.Img>
+
+                                </motion.div>
+                                <br />
+                                Universida Popular del cesar
+                                2019 - 2023
+
 
 
                             </Card.Body>
+                            <AnimatePresence>
+                                {
+
+                                    selectedId === 3 &&
+                                    <motion.div>
+                                        <motion.button onClick={() => setSelectedId(null)} >x</motion.button>
+                                        <Card.Img style={{ width: "10rem" }} src='./Logos-Imágenes/logo_upc.png'></Card.Img>
+                                        
+                                    </motion.div>
+
+                                }
+                            </AnimatePresence>
                         </Card>
 
                     </Col>
-
-
 
                 </Row>
                 <Card.Text>  A continuación te presento algunas de las tecnologías que manejo y mis proyectos creados.

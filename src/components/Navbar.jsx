@@ -1,18 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import "bootswatch/dist/lux/bootstrap.min.css";
 import { Container, Navbar, Nav, NavDropdown, Card } from "react-bootstrap";
 import { motion } from "framer-motion"
 
 const NavBar = () => {
+    const [isOn, setIsOn] = useState(false);
+    const toggleSwitch = () => setIsOn(!isOn);
+
+    const [isSpanish, setIsSpanish] = useState(false);
+    const toggleSwitchSpanish = () => setIsSpanish(!isSpanish);
+
+    const spring = {
+        type: "spring",
+        stiffness: 700,
+        damping: 30
+    };
 
     return (
         <motion.div
-            initial={{  opacity: 0 }}
-            animate={{  opacity: 1 }}
-            transition={{ duration: 2 }}                    
-            
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 2 }}
+
         >
-            <Navbar className=" navbar-dark bg-primary mb-5" 
+            <Navbar className=" navbar-dark bg-primary mb-5"
                 fixed="top" expand="lg" id="navbar"
             >
 
@@ -41,9 +52,22 @@ const NavBar = () => {
                             <Nav.Link href="#contactme">Contact Me</Nav.Link>
 
 
+
                         </Nav>
 
                     </Navbar.Collapse>
+                    Darkmode: 
+                    <div className="switch" data-ison={isOn} onClick={toggleSwitch}>
+                        <motion.div className="handle" layout transition={spring} />
+                    </div>
+                    spanish: 
+                    <div className="switch" data-ison={isSpanish} onClick={toggleSwitchSpanish}
+                        style={{ position: "static" }}>
+
+                        <motion.div className="handle" layout transition={spring}
+
+                        />
+                    </div>
 
                 </Container>
             </Navbar>
