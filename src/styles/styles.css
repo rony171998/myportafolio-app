@@ -128,9 +128,18 @@
 }
 
 .parent[data-isopen="true"] {
-  width: 42rem;
+  width: 32rem;
   height: 17rem;
 }
+
+@media screen and (max-width: 700px) {
+  .parent[data-isopen="true"] {
+    width: 20rem;
+    height: 15rem;
+  }
+}
+  
+
 
 .child {
   
@@ -160,11 +169,45 @@
   justify-content: flex-end;
 }
 
+
 .handle {
   width: 1.5rem;
   height: 1.4rem;
   background-color: white;
   border-radius: 40px;
+}
+
+.next,
+.prev {
+  top: calc(60% - 20px);
+  position: absolute;
+  background: gray;
+  border-radius: 30px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 18px;
+  z-index: 2;
+}
+
+.next {
+  right: 15%;
+}
+
+.prev {
+  left: 15%;
+  transform: scale(-1);
+}
+
+.toanimate-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 

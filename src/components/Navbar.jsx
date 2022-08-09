@@ -2,20 +2,44 @@ import React, { useState } from "react";
 import "bootswatch/dist/lux/bootstrap.min.css";
 import { Container, Navbar, Nav, NavDropdown, Card } from "react-bootstrap";
 import { motion } from "framer-motion"
+import { useEffect } from "react";
 
 const NavBar = () => {
-    const [isOn, setIsOn] = useState(false);
-    const toggleSwitch = () => setIsOn(!isOn);
 
-    const [isSpanish, setIsSpanish] = useState(false);
-    const toggleSwitchSpanish = () => setIsSpanish(!isSpanish);
+    const [isDarkMode, setDarkMode] = useState(false);
+    const toggleSwitch = () => setDarkMode(!isDarkMode);  
 
+    useEffect(() => {
+        const json = localStorage.getItem("site-dark-mode");
+        const currentMode = JSON.parse(json);
+        if (currentMode) {
+        setDarkMode(true);
+        } else {
+        setDarkMode(false);
+        }
+                                     
+    }, []);
+
+    useEffect(() => {
+                          
+        if (isDarkMode) {
+            document.body.classList.add("bg-dark");
+          } else {
+            document.body.classList.remove("bg-dark");
+            
+          }
+        const json = JSON.stringify(isDarkMode);
+        localStorage.setItem("site-dark-mode", json);
+        
+    }, [isDarkMode]);
+
+    
     const spring = {
         type: "spring",
         stiffness: 700,
         damping: 30
     };
-
+    
     return (
         <motion.div
             initial={{ opacity: 0 }}
@@ -54,20 +78,13 @@ const NavBar = () => {
 
 
                         </Nav>
+                        Darkmode :
+                        <div className="switch" data-ison={isDarkMode} onClick={toggleSwitch}>
+                            <motion.div className="handle" layout transition={spring} />
+                        </div>
 
                     </Navbar.Collapse>
-                    Darkmode: 
-                    <div className="switch" data-ison={isOn} onClick={toggleSwitch}>
-                        <motion.div className="handle" layout transition={spring} />
-                    </div>
-                    spanish: 
-                    <div className="switch" data-ison={isSpanish} onClick={toggleSwitchSpanish}
-                        style={{ position: "static" }}>
 
-                        <motion.div className="handle" layout transition={spring}
-
-                        />
-                    </div>
 
                 </Container>
             </Navbar>

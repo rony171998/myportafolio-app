@@ -89,7 +89,7 @@ const Skills = () => {
     //console.log(items);
     return (
 
-        <Card ref={ref} className='mb-5 pb-5' id='skills'>
+        <Card ref={ref}  id='skills'>
             <Card.Header className='bg-primary text-white'>
                 <Card.Title >Skills</Card.Title>
             </Card.Header>
@@ -99,7 +99,7 @@ const Skills = () => {
                 justify>
                 <Tab eventKey="home" title="Stast Bar">
 
-                    <Row className='p-5'>
+                    <Row className='py-5 px-3'>
                         {skills.map((skill, index) => {
 
                             return (

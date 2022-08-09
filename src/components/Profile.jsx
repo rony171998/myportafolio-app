@@ -73,7 +73,7 @@ const Home = () => {
                                 boxShadow: "-50px 50px 100px #212121,50px -50px 100px #ffffff",
 
                             }}
-                            src='./Logos-Imágenes/photostudio-2-designify.png' className="mifoto">
+                            src='./Logos-Imágenes/photostudio-2-designify.png'>
 
                         </Card.Img>
 
@@ -93,10 +93,10 @@ const Home = () => {
                         drag dragConstraints={constraintsRef2}
                         style={{cursor: "pointer"}}
                     >
-                       <Card className='border-light mb-5'>
+                       <Card className=' border-light text-black'>
 
-                        <Card.Header className='mt-5 pt-5 pb-5'>
-                            <Card.Title className="textMachine">
+                        <Card.Header className='pt-5 pb-5'>
+                            <Card.Title>
                                 Hi, I'm Rony
                                 <br />
                                 I'm a Full Stack Web Developer
