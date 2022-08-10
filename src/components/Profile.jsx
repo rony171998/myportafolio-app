@@ -10,7 +10,6 @@ const Home = () => {
     const isInView = useInView(ref);
 
     const constraintsRef = useRef(null);
-    const constraintsRef2 = useRef(null);
 
     const x = useMotionValue(200);
     const y = useMotionValue(200);
@@ -24,7 +23,7 @@ const Home = () => {
         x.set(event.clientX - rect.left);
         y.set(event.clientY - rect.top);
     }
-
+    
     return (
         <Container className='mb-5 mt-5 pt-5 pb-5' id='profile'
             ref={ref} 
@@ -87,11 +86,10 @@ const Home = () => {
                     animate={{ opacity: 1, x: isInView ? 0 : 550, display: isInView ? 'block' : 'none' }}
                     transition={{ duration: 1.5 }}
                     whileHover={{ scale: 0.95 }}
-                    ref={constraintsRef2}
+                    
                 >
                     <motion.div className="item"
-                        drag dragConstraints={constraintsRef2}
-                        style={{cursor: "pointer"}}
+                        
                     >
                        <Card className=' border-light text-black'>
 
