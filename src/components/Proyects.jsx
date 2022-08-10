@@ -133,6 +133,8 @@ const Proyects = () => {
                                                     
                                                     className="parent"
                                                     onClick={() => setIsOpen(!isOpen)}
+                                                    onHoverStart={() => setIsOpen(true)}
+                                                    onHoverEnd={() => setIsOpen(false)}
                                                     
                                                 >
                                                     <motion.div layout className="child" 

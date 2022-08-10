@@ -76,7 +76,7 @@ const Aboutme = () => {
                                         {infoaboutmeItem.images?.map((imagen, index) => (
 
                                             <Col key={index}>
-                                                <motion.div onClick={() => setSelectedId(index)}>
+                                                <motion.div onClick={() => setSelectedId(index)} onHoverStart={() => setSelectedId(index)}>
                                                     <motion.div>
                                                         <Card.Img style={{ width: "10rem", cursor: "pointer" }} src={imagen.image} />
 

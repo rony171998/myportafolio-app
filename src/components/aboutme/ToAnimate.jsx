@@ -42,12 +42,14 @@ const ToAnimate = ({ images }) => {
 
   return (
     <>
-      <AnimatePresence initial={false} custom={direction}>
+      <AnimatePresence initial={false} custom={direction} key={page} >
         <div className="prev" onClick={() => paginate(-1)}>
           {"‣"}
         </div>
         
         <motion.img
+
+          key={page}
           style={{ width: "50%" }}        
           src={images[imageIndex]}
           custom={direction}
