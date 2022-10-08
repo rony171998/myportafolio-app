@@ -2,6 +2,7 @@
 .cardproyects {
     position: relative;   
     transition: box-shadow .3s ease-in-out;
+    
 }
 .card-infoproyects {
     position: absolute;
@@ -13,9 +14,11 @@
   
   .card-imgproyects{
     border-radius: 5%;
+    
   }
   .card-imgproyect{
     border-radius: 5%;
+    
   }
   /*Buttons*/
     .social-media {
@@ -45,6 +48,7 @@
     opacity: 0;
     transition: all .3s ease-in;
     position: absolute;
+    
    }
    
    /*Text*/
@@ -101,9 +105,12 @@
  .figure {
     position: relative;
     object-fit: contain;
+    
+    
 }
 .figure .card-imgproyect {
   position: absolute;
+  
   top: 0;
   right: 0;
   left: 0;

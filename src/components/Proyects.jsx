@@ -1,10 +1,10 @@
-import React, {  useState } from 'react';
-import { Button, Card, CardGroup, Container } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Button, Card,  Col, Container, Row } from 'react-bootstrap';
 import { motion } from "framer-motion";
 
 const cardVariants = {
     offscreen: {
-        opacity: 0,                
+        opacity: 0,
     },
     onscreen: {
         opacity: 1,
@@ -19,9 +19,43 @@ const cardVariants = {
 
 const Proyects = () => {
     const [isOpen, setIsOpen] = useState(true);
-    
 
     const proyects = [
+        {
+            name: 'Smart-Mark',
+            description: "Desarrollo aplicación web para el manejo de productos online que permite potencializar las ventas online.Mas de +1000 horas de experiencia de desarrollo.",
+
+            created: "Desarrollada con: React JS , Bootstrap , Node JS ,Express JS , PostgreSQL ,Azure Apps",
+            url: 'https://smart-mark.netlify.app/',
+            image: [
+                './Logos-Imágenes/smart-mark.png',
+                './Logos-Imágenes/smart-mark 2.png',
+            ],
+            technologies: [
+                './Íconos/physics.png',
+                './Íconos/bootstrap.png',
+                './Íconos/icons8-node-js-64.png',
+                "./Íconos/icons8-postgresql-64.png",
+                "./Íconos/icons8-azure-64.png"
+
+            ]
+        },
+        {
+            name: "Graph-tweets (in progress)",
+            description: "Desarrollo web scraper para encontrar los tweets mas populares bajo un Criterio de búsqueda para analizar y graficar.Mas de +1M de tweets analizados",
+            
+            created: "Website created with react js, pure css and python",
+            url: "https://graph-tweets.netlify.app/",
+            image: [
+                "./Logos-Imágenes/Graph-tweets.png",
+                "./Logos-Imágenes/Graph-tweets2.png",
+            ],
+            technologies: [
+                './Íconos/physics.png',
+                './Íconos/css.png',
+                './Íconos/icons8-python-64.png',
+            ]
+        },
         {
             name: 'E-commerce App',
             description: "E-commerce website for smarphones, smart TV, and other products.",
@@ -53,7 +87,6 @@ const Proyects = () => {
             ]
         }
         ,
-
         {
             name: 'Pokemon App',
             description: 'Pokemon App is a website that allows you to view pokemons and their stats.',
@@ -69,7 +102,6 @@ const Proyects = () => {
                 './Íconos/redux.png',
             ]
         }
-
     ];
 
     return (
@@ -79,68 +111,71 @@ const Proyects = () => {
                 <Card.Header className='bg-primary text-white'>
                     <Card.Title >Proyects</Card.Title>
                 </Card.Header>
+
                 {proyects.map((proyect, index) => {
                     return (
-                        
+
                         <motion.div
                             key={index}
-                            whileHover={ { scale: 1.1 } }
                             initial="offscreen"
                             whileInView="onscreen"
                             viewport={{ amount: 0.8 }}
-                            
+
                         >
                             <motion.div variants={cardVariants}>
-                                <Card key={index} className='mb-5 text-white bg-primary ' id={"proyect" + index}
+                                <Card key={index} className='m-5 text-white bg-primary ' id={"proyect" + index}
 
                                 >
-                                    <CardGroup >
-                                        <Card className='text-white bg-primary '>
+                                    <Row >
+                                        <Col sm="6">
+                                            <Card className='text-white bg-primary cardproyects'>
 
-                                            <Card.Body className='cardproyects'>
-                                                <Card.Link href={proyect.url} target="_blank" rel="noopener noreferrer">
-                                                    <div className='figure'>
-                                                        <Card.Img className="card-imgproyects" src={proyect.image[0]} />
-                                                        <Card.Img className="card-imgproyect" src={proyect.image[1]} />
-                                                    </div>
+                                                <Card.Body className=''>
+                                                    <Card.Link href={proyect.url} target="_blank" rel="noopener noreferrer">
+                                                        <div className='figure'>
+                                                            <Card.Img className="card-imgproyects" src={proyect.image[0]} />
+                                                            <Card.Img className="card-imgproyect" src={proyect.image[1]} />
+                                                        </div>
 
-                                                </Card.Link>
-                                                <ul className="social-media">
+                                                    </Card.Link>
+                                                    <ul className="social-media">
 
-                                                    {proyect.technologies.map((image, index) => {
-                                                        return (
+                                                        {proyect.technologies.map((image, index) => {
+                                                            return (
 
-                                                            <li key={index}>
-                                                                <Card.Img
-                                                                    className="iconimg" src={image} alt="CardIcon">
-                                                                </Card.Img>
-                                                            </li>
-                                                        )
-                                                    }
-                                                    )}
+                                                                <li key={index}>
+                                                                    <Card.Img
+                                                                        className="iconimg" src={image} alt="CardIcon">
+                                                                    </Card.Img>
+                                                                </li>
+                                                            )
+                                                        }
+                                                        )}
 
-                                                </ul>
+                                                    </ul>
 
-                                            </Card.Body>
-                                        </Card>
-                                        <Card  className='text-white bg-primary'>
+                                                </Card.Body>
+                                            </Card>
+                                        </Col>
+                                        <Col >
+                                            <Card className='text-white bg-primary'>
 
-                                            <Card.Body>
-                                                <motion.div
-                                                    layout
-                                                    data-isopen={isOpen}
-                                                    initial={{ borderRadius: 50 }}
-                                                    
-                                                    className="parent"
-                                                    onClick={() => setIsOpen(!isOpen)}
-                                                    onHoverStart={() => setIsOpen(true)}
-                                                    onHoverEnd={() => setIsOpen(false)}
-                                                    
-                                                >
-                                                    <motion.div layout className="child" 
-                                                        
-                                                    />
-                                                    
+                                                <Card.Body>
+                                                    <motion.div
+                                                        layout
+                                                        data-isopen={isOpen}
+                                                        initial={{ borderRadius: 50 }}
+
+                                                        className="parent"
+                                                        onClick={() => setIsOpen(!isOpen)}
+                                                        onHoverStart={() => setIsOpen(true)}
+                                                        onHoverEnd={() => setIsOpen(false)}
+
+                                                    >
+                                                        <motion.div layout className="child"
+
+                                                        />
+
                                                         <Card className='text-white bg-primary'>
                                                             <Card.Header><Card.Title>{proyect.name}</Card.Title></Card.Header>
                                                             <Card.Body>
@@ -153,11 +188,13 @@ const Proyects = () => {
                                                             </Card.Link>
 
                                                         </Card>
-                                                </motion.div>
+                                                    </motion.div>
 
-                                            </Card.Body>
-                                        </Card>
-                                    </CardGroup>
+                                                </Card.Body>
+                                            </Card>
+                                        </Col>
+
+                                    </Row>
                                 </Card>
 
                             </motion.div>

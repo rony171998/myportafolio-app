@@ -67,11 +67,7 @@ const Skills = () => {
                 {
                     name: "Azure",
                     level: 70
-                },
-                {
-                    name: "Heroku",
-                    level: 70
-                },
+                },               
                 {
                     name: "Firebase",
                     level: 70
