@@ -11,7 +11,7 @@ const Footer = () => {
                             <p className="card-text mt-1">Valledupar - Colombia</p>
                             <div className="card-body">
                                 <h4 className="card-header text-black bg-secondary mb-3">Curriculum</h4>
-                                <a className="card-link" href="https://drive.google.com/file/d/1T7fZFlxlmmCT1fLnE9dUQLkp2wTIv5ED/view?usp=sharing"
+                                <a className="card-link" href="https://www.canva.com/design/DAFIIFIdRwA/iJ3xZc15-uhYUoMKxaTHKw/view?utm_content=DAFIIFIdRwA&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink"
                                     target="_blank" rel="noopener noreferrer">
                                     <img className="card-img" src="https://cdn-icons-png.flaticon.com/512/3135/3135731.png" alt="" style={{ width: "25%" }} />
                                 </a>
@@ -24,6 +24,9 @@ const Footer = () => {
                     <div className="col">
                         <div className="card-body ">
                             <h4 className="card-header text-black bg-secondary mb-3 ">Products</h4>
+                            <a className="card-link" href="https://personaltrainer-crossfit.vercel.app/" target="_blank" rel="noopener noreferrer">
+                                <p className="card-text text-white">Personal Trainer</p>
+                            </a>
                             <a className="card-link" href="https://e-commerce-rony.netlify.app/" target="_blank" rel="noopener noreferrer">
                                 <p className="card-text text-white">E-commerce App</p>
                             </a>

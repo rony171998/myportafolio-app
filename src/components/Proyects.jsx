@@ -8,7 +8,6 @@ const cardVariants = {
     },
     onscreen: {
         opacity: 1,
-
         transition: {
             type: "spring",
             bounce: 0.4,
@@ -21,6 +20,22 @@ const Proyects = () => {
     const [isOpen, setIsOpen] = useState(true);
 
     const proyects = [
+        {
+            name: 'Personal Trainer Crossfit',
+            description: "Se trato de una landing page diseñada para una personal trainer que buscaba promocionar sus servicios en línea y además productos que ofrece de manera virtual como pueden ser planes de entrenamiento personalizados e ebooks.",
+
+            created: "Desarrollada con: React JS , Tailwing Css , TypeScript",
+            url: 'https://personaltrainer-crossfit.vercel.app/',
+            image: [
+                './Logos-Imágenes/personaltrainer.png',
+                './Logos-Imágenes/personaltrainer2.png',
+            ],
+            technologies: [
+                './Íconos/physics.png',
+                './Íconos/icons8-tailwind-css-64.png',
+                './Íconos/icons8-typescript-64.png',
+            ]
+        },
         {
             name: 'Smart-Mark',
             description: "Desarrollo aplicación web para el manejo de productos online que permite potencializar las ventas online.Mas de +1000 horas de experiencia de desarrollo.",

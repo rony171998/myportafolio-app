@@ -17,21 +17,21 @@ const Skills = () => {
             name: "Front-End",
             Tecnologies: [
                 {
-                    name: "HTML",
-                    level: 95
-                },
-                {
-                    name: "CSS",
-                    level: 85
-                },
-                {
                     name: "JavaScript",
                     level: 95
                 },
                 {
                     name: "React Js",
                     level: 90
-                }
+                },
+                {
+                    name: "TypeScript",
+                    level: 95
+                },
+                {
+                    name: "Material UI Css",
+                    level: 95
+                },
             ]
         },
         {
@@ -55,7 +55,6 @@ const Skills = () => {
                 },
             ]
         }
-
         ,
         {
             name: "Tools",
@@ -71,12 +70,9 @@ const Skills = () => {
                 {
                     name: "Firebase",
                     level: 70
-
                 }
             ]
         }
-
-
     ];
     const ref = useRef(null);
     const isInView = useInView(ref);
